@@ -25,6 +25,7 @@ namespace MarsRover.Controllers
     [SwaggerResponse((int)HttpStatusCode.BadRequest, "returns bad request when request is not valid", typeof(BadRequestResult))]
     public async Task<IActionResult> MoveAsync(RoverRequest roverRequest)
     {
+      //This code for log
       Console.WriteLine($"Start RoverRequest:{roverRequest.ToJson()}");
 
      var result = await _positionService.MovingAsync(roverRequest);
